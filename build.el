@@ -1,4 +1,5 @@
 (setq backup-directory-alist '(("." .  "~/.emacs.d/backup")))
+(setq site-title "ofthegoats' blog")
 
 ;; Load the publishing system
 (require 'ox-publish)
@@ -18,6 +19,7 @@
              :publishing-function 'org-html-publish-to-html
              :auto-sitemap t
              :sitemap-filename "index.org"
+             :sitemap-title site-title
              :sitemap-style 'list
              :sitemap-sort-files 'anti-chronologically)
        (list "site-images"
@@ -36,6 +38,7 @@
              :html-link-org-files-as-html t
              :auto-sitemap t
              :sitemap-filename "rss.org"
+             :sitemap-title site-title
              :sitemap-style 'list
              :sitemap-sort-files 'anti-chronologically)
        ))
