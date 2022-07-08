@@ -1,10 +1,15 @@
 (setq backup-directory-alist '(("." .  "~/.emacs.d/backup")))
 (setq site-title "ofthegoats' blog")
+(setq org-html-validation-link nil
+      org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.simplecss.org/simple.min.css\"/>")
+;; TODO replace with own CSS file
 
 ;; Load the publishing system
 (require 'ox-publish)
 (load "~/sources/org-mode-contrib/ox-rss.el")
 (require 'ox-rss)
+(load "~/sources/htmlize/htmlize.el")
+(require 'htmlize)
 
 ;; Define the publishing project
 (setq org-publish-project-alist
@@ -21,11 +26,14 @@
              :sitemap-filename "index.org"
              :sitemap-title site-title
              :sitemap-style 'list
-             :sitemap-sort-files 'anti-chronologically)
-       (list "site-images"
-             :base-directory "./content/images"
-             :base-extension "png\\|jpg"
-             :publishing-directory "./public/images"
+             :sitemap-sort-files 'anti-chronologically
+             :with-creator nil
+             :time-stamp-file nil)
+       (list "site-static"
+             :recursive t
+             :base-directory "./content"
+             :base-extension "png\\|jpg\\|css"
+             :publishing-directory "./public"
              :publishing-function 'org-publish-attachment)
        (list "site-rss-feed"
              :base-directory "./content"
