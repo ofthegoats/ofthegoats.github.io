@@ -1,0 +1,178 @@
+#+title: Asking Smart Questions
+#+date: 2022:02:12
+
+This post aims to be a TLDR of the popular page [[http://catb.org/~esr/faqs/smart-questions.html][How to Ask Questions the Smart
+Way]]. It's also a pet peeve of mine when someone asks a lazy question, so I want
+to quickly address some things to avoid when asking questions.
+
+This post is also primarily about asking questions on instant messaging servers
+or channels, similar to IRC (or Discord for most of the younger crowd).
+
+Also note that this is about technical questions and may not make sense in every
+context. If you /can/ ask a question the smart way, you probably should.
+
+** What this isn't
+:PROPERTIES:
+:CUSTOM_ID: what-this-isnt
+:ID:       c677617d-a424-42da-b882-02c243d0410a
+:END:
+
+If you're casually reading this, you might make the mistake of thinking this all
+sounds like "the best way to ask questions is to not ask questions at all." This
+is not what this means at all.
+
+Asking good questions is incredibly important, both in developing your own
+understanding of a concept, and in developing that of others. If you ask a good
+question and one someone is able to answer it, most likely *you're not the only
+one learning from it*.
+
+Asking a good question feels a lot better than asking a bad question, and
+answering a good question feels amazing. Answering a bad question, on the other
+hand, feels like a waste of time, so people eventually stop doing it and start
+avoiding you.
+
+Also note that a bad question is /not/ a question which "most people already
+know the answer to". In this context, a bad question is simply a lazy question,
+one which you have made little to no effort of answering by yourself.
+
+** Motivation
+:PROPERTIES:
+:CUSTOM_ID: motivation
+:ID:       b601d310-df54-4aa5-84fc-12e5363a1d53
+:END:
+
+To get a good answer to a problem, you need to be able to develop your questions
+suitably. Asking a good question is a difficult process, whereas asking a poor
+question will only display laziness and make people less likely to help you.
+Learning to ask questions the smart way may also help you to answer them
+yourself, or help others get their questions answered.
+
+** Things to do before asking
+:PROPERTIES:
+:CUSTOM_ID: things-to-do-before-asking
+:ID:       2af4c583-abe6-4dfc-811f-5460cb27821f
+:END:
+
+1. Ask yourself, is this the right question?
+2. Read the man page
+3. Search the internet
+4. Try what you find
+
+Often, the question you're asking is already answered elsewhere, or even
+documented. If you don't look for an answer to your own question before asking
+someone else, you're just being lazy, and the people you're asking will tell you
+that.
+
+RTFM (read the f####ng manual) and STFW (search the f####ng web, sometimes
+written "google is your friend") are not insults. They're instructions, and
+often will lead to you finding your answer.
+
+If you are unsure where to start, make /that/ your question. Maybe someone will
+kindly guide you through starting, before setting you off on your own.
+
+If through this process you have found an answer, try it! See if it works! This
+should be obvious, but apparently not to everyone.
+
+There is also the case to consider, does the question you want to ask make
+sense? Avoid "X Y problems", don't get stuck on a particular style of solution
+to a problem that is best solved another way. If you absolutely /must/ use a
+particular method, make sure to justify that when asking the question.
+
+In short, before giving other people your problem, try to solve it yourself. If
+you can't do that, /then/ ask, making sure to say what you have tried.
+
+** Things to include in your question
+:PROPERTIES:
+:CUSTOM_ID: things-to-include-in-your-question
+:ID:       cdf5cc1f-a9b5-4c77-88aa-9b1efabb11b8
+:END:
+
+Regardless of what your question is about, you should send /what you have
+tried/, and if it failed then also post /how/ or /why/ it failed. Making sure to
+include this in your question should also remind you to try solving your own
+problem before giving it to other people. If you don't include what you have
+already tried, people are likely to send you things you have already done,
+wasting more of both theirs and your own time.
+
+If you want someone to help you with your code, post the error, the code and
+what you want it to do.
+
+If you want help understanding a concept, post what your current understanding
+of it, so people who understand it better are able to see what you need help
+with specifically.
+
+If you want help finding a piece of software or algorithm to suit your needs,
+post the context and the desired goal. Post what you have found or considered
+and why it is not enough. In the case of the piece of software, perhaps one of
+the solutions you found is enough and you only have to configure it a bit,
+though what you need to change specifically might be hiding somewhere in the
+documentation.
+
+** What */not/* to do
+:PROPERTIES:
+:CUSTOM_ID: what-not-to-do
+:ID:       12444519-5ef3-47a1-bbd9-19f056201538
+:END:
+
+Most of these should be obvious. Unfortunately, to some people they apparently
+aren't.
+
+Firstly, make sure that you're asking in the right place. If you ask for help
+writing C in a channel for OCaml, either everyone will ignore you or someone
+will tell you go to the appropriate channel.
+
+Regardless of whether your question is smart or not, /don't [[https://dontasktoask.com/][ask to ask]]/. Just
+ask your question, or people (should) ignore you. No one wants to lock
+themselves into helping you, just because you didn't send the details. If, by
+some miracle, someone /does/ want to help you, by not having posted any details
+about your question you waste their time, as they now have to ask you for
+details.
+
+Don't open direct/private messages with people to ask for help, unless agreed
+with them beforehand that you can do so. Post in the public channel, where
+everyone can see what you need help with and anyone can help you.
+
+Don't ask the same question in multiple channels. Someone may answer your
+question in one of them, then someone else might answer the same question in the
+other channel. Managing answers in different channels is a hassle for you, and
+it's a waste of time for the second person.
+
+** Possible answers to bad questions
+:PROPERTIES:
+:CUSTOM_ID: possible-answers-to-bad-questions
+:ID:       441a4356-c241-43d3-b6b0-b66abaea73dd
+:END:
+
+If you're sent a link to https://dontasktoask.com/ you probably just asked a bad
+question. Don't let that put you off, put more detail into your question and
+don't make the same mistake in future.
+
+If you're told to RTFM or STFW, don't take this as an insult. Someone has just
+told you that the answer to your question already exits. If you have already
+done both of these and still can't find it, explain what you have looked at and
+they should guide you to the correct place. In future, send more details with
+the original question.
+
+If you're told to go to a different channel, you should probably go to that
+channel. If you still believe that you shouldn't be asking elsewhere, explain
+so, but don't start any arguments.
+
+If you're told not to send the same question in multiple channels, or to get out
+of DMs and ask in the public channel, then that's really just on you. Apologise
+and move on.
+
+** What to do once you have an answer
+:PROPERTIES:
+:CUSTOM_ID: what-to-do-once-you-have-an-answer
+:ID:       3a7e6669-a12c-4c24-a90b-2c41909d3dcf
+:END:
+
+This is really only if you feel benevolent, but it can help other people a lot.
+If you feel that other people would benefit from knowing about your problem and
+the solution you made for it, put that online for other people to find. Some
+ways you could do that are:
+
+- You could write a public [[https://gist.github.com/][gist]], explaining what it's for.
+- You could write a blog post, detailing the problem and the solution.
+- You could make a question on some forum, like StackOverflow, and
+  answer it yourself (or send the question link to the person who helped you).

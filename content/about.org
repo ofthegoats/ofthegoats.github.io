@@ -1,0 +1,10 @@
+#+title:  About
+#+date: 2021:03:11
+
+My name is Piotr Kozicki, online I am known as ofthegoats.
+
+I study maths and computer science. Besides my studies, I love cats, metal and
+play video games.
+
+This is a place where I will try to post information on potentially interesting
+or useful topics.
