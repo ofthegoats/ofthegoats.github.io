@@ -1,8 +1,16 @@
 (setq backup-directory-alist '(("." .  "~/.emacs.d/backup")))
-(setq site-title "ofthegoats' blog")
-(setq org-html-validation-link nil
-      org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.simplecss.org/simple.min.css\"/>")
+(setq site-title "ofthegoats' blog"
+      org-html-validation-link nil
+      org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.simplecss.org/simple.min.css\"/>"
+      org-html-head-include-default-style nil)
 ;; TODO replace with own CSS file
+
+;; credit https://gitlab.com/to1ne/blog/blob/master/elisp/publish.el#L200-204
+(defun otg/org-rss-publish-to-rss (plist filename pub-dir)
+  "Publish RSS with PLIST, only when FILENAME is 'rss.org'.
+   PUB-DIR is when the output will be placed."
+  (if (equal "rss.org" (file-name-nondirectory filename))
+      (org-rss-publish-to-rss plist filename pub-dir)))
 
 ;; Load the publishing system
 (require 'ox-publish)
@@ -39,7 +47,7 @@
              :base-directory "./content"
              :recursive t
              :exclude (regexp-opt '("index.org" "rss.org" "about.org"))
-             :publishing-function 'org-rss-publish-to-rss
+             :publishing-function 'otg/org-rss-publish-to-rss
              :publishing-directory "./public"
              :rss-extension "xml"
              :html-link-use-abs-url t
