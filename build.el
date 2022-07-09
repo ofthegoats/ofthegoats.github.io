@@ -18,6 +18,31 @@
   (if (equal "rss.org" (file-name-nondirectory filename))
       (org-rss-publish-to-rss plist filename pub-dir)))
 
+
+(defun otg/sitemap-publish-format (title list)
+  "Default site map, as a string.
+   TITLE is the title of the site map.
+   LIST is an internal representation for the files to include,
+   as returned by `org-list-to-lisp'.
+   PROJECT is the current project."
+  (concat "#+TITLE: " title "\n"
+          "#+ATTR_HTML: :class sitemap\n"
+	        (org-list-to-org list)))
+
+(defun otg/sitemap-publish-entry-format (entry style project)
+  "My format for site map ENTRY, as a string.
+   ENTRY is a file name. STYLE is the style of the sitemap.
+   PROJECT is the current project."
+  (cond ((not (directory-name-p entry))
+	       (format "** [[file:%s][%s]] (posted/edited %s)"
+		             entry
+		             (org-publish-find-title entry project)
+                 (format-time-string "%d.%m.%y" (org-publish-find-date entry project))))
+	      ((eq style 'tree)
+	       ;; Return only last subdir.
+	       (file-name-nondirectory (directory-file-name entry)))
+	      (t entry)))
+
 ;; Load the publishing system
 (require 'ox-publish)
 (load "~/sources/org-mode-contrib/ox-rss.el")
@@ -41,8 +66,17 @@
              :sitemap-title site-title
              :sitemap-style 'list
              :sitemap-sort-files 'anti-chronologically
+             :sitemap-format-entry 'otg/sitemap-publish-entry-format
+             :sitemap-function 'otg/sitemap-publish-format
              :with-creator nil
+             :section-numbers nil
              :time-stamp-file nil)
+       (list "site-about"
+             :base-directory "./content"
+             :publishing-directory "./public"
+             :publishing-function 'org-html-publish-to-html
+             :exclude ".*"
+             :include ["about.org"])
        (list "site-static"
              :recursive t
              :base-directory "./content"
