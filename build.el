@@ -1,9 +1,15 @@
 (setq backup-directory-alist '(("." .  "~/.emacs.d/backup")))
-(setq site-title "ofthegoats' blog"
+(setq site-title "ofthegoats' blog")
+(setq org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/stylesheet.css\"/>"
+      org-html-head-extra ""
+      org-html-head-include-default-style nil
+      org-html-head-include-scripts t
+      ;; header
+      org-html-preamble-format '(("en" "<a class=\"alignleft\" href=\"/\">/home/otg</a> <a class=\"alignright\" href=\"/about.html\">[about]</a> <a class=\"alignright\" href=\"/rss.xml\">[rss]</a>"))
+      org-html-preamble t
+      org-html-postamble nil
       org-html-validation-link nil
-      org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.simplecss.org/simple.min.css\"/>"
-      org-html-head-include-default-style nil)
-;; TODO replace with own CSS file
+      org-html-use-infojs nil)
 
 ;; credit https://gitlab.com/to1ne/blog/blob/master/elisp/publish.el#L200-204
 (defun otg/org-rss-publish-to-rss (plist filename pub-dir)
