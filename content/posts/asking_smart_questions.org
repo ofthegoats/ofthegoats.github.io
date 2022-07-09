@@ -1,5 +1,5 @@
 #+title: Asking Smart Questions
-#+date: 2022:02:12
+#+date: 2022-02-12
 
 This post aims to be a TLDR of the popular page [[http://catb.org/~esr/faqs/smart-questions.html][How to Ask Questions the Smart
 Way]]. It's also a pet peeve of mine when someone asks a lazy question, so I want

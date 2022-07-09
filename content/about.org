@@ -1,5 +1,4 @@
 #+title:  About
-#+date: 2021:03:11
 
 My name is Piotr Kozicki, online I am known as ofthegoats.
 

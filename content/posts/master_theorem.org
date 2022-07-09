@@ -1,5 +1,5 @@
 #+title: The Master Theorem
-#+date: 2021:06:23
+#+date: 2021-06-23
 
 The Master Theorem is a common and important tool, used in the
 asymptotic analysis of algorithms: particularly recursive,
