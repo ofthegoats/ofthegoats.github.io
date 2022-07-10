@@ -45,9 +45,9 @@
 
 ;; Load the publishing system
 (require 'ox-publish)
-(load "./scripts/ox-rss.el")
+(load-file "./scripts/ox-rss.el")
 (require 'ox-rss)
-(load "./scripts/htmlize.el")
+(load-file "./scripts/htmlize.el")
 (require 'htmlize)
 
 ;; Define the publishing project
