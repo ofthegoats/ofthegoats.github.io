@@ -5,9 +5,14 @@
       org-html-head-include-default-style nil
       org-html-head-include-scripts t
       ;; header
-      org-html-preamble-format '(("en" "<a class=\"alignleft\" href=\"/\">/home/otg</a> <a class=\"alignright\" href=\"/about.html\">[about]</a> <a class=\"alignright\" href=\"/rss.xml\">[rss]</a>"))
+      org-html-preamble-format '(("en" "<a class=\"alignleft\" href=\"/\">/home/otg</a>
+                                        <a class=\"alignright\" href=\"/about.html\">[about]</a>
+                                        <a class=\"alignright\" href=\"/rss.xml\">[rss]</a>"))
       org-html-preamble t
-      org-html-postamble nil
+      ;; footer
+      org-html-postamble-format '(("en" "Unless otherwise noted, the content of this site is licensed under
+                                         <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\">CC BY-NC-SA 4.0</a>"))
+      org-html-postamble t
       org-html-validation-link nil
       org-html-use-infojs nil)
 
