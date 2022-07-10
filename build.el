@@ -45,9 +45,9 @@
 
 ;; Load the publishing system
 (require 'ox-publish)
-(load "~/sources/org-mode-contrib/ox-rss.el")
+(load "./scripts/ox-rss.el")
 (require 'ox-rss)
-(load "~/sources/htmlize/htmlize.el")
+(load "./scripts/htmlize.el")
 (require 'htmlize)
 
 ;; Define the publishing project
