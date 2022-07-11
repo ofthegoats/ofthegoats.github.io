@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Master Theorem</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<a class="alignleft" href="/">/home/otg</a>
+                                        <a class="alignright" href="/about.html">[about]</a>
+                                        <a class="alignright" href="/rss.xml">[rss]</a>
+</div>
+<div id="content" class="content">
+<h1 class="title">The Master Theorem</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#definition">Definition</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#binary-search">Binary Search</a></li>
+<li><a href="#merge-sort">Merge Sort</a></li>
+</ul>
+</li>
+<li><a href="#informal-proof">Informal Proof</a></li>
+<li><a href="#formal-proof">Formal Proof</a></li>
+</ul>
+</div>
+</div>
+<p>
+The Master Theorem is a common and important tool, used in the
+asymptotic analysis of algorithms: particularly recursive,
+divide-and-conquer algorithms, common examples of which include Binary
+Search, Merge Sort and Quick Sort.
+</p>
+
+<div id="outline-container-definition" class="outline-2">
+<h2 id="definition">Definition</h2>
+<div class="outline-text-2" id="text-definition">
+<p>
+Where \(T(n)\) is the running time of an algorithm for an input size
+\(n\), we define the upper bound with:
+</p>
+
+<p>
+\[
+T(n) \leq c \quad \forall \quad \text{sufficiently small $n$}
+\]
+</p>
+
+<p>
+otherwise,
+</p>
+
+<p>
+\[
+T(n) \leq a T\left(\frac{n}{b}\right) + O(n^{d})
+\]
+</p>
+
+<p>
+where:
+</p>
+<ul class="org-ul">
+<li>\(a\) is the number of times the algorithm is recursively called per (non-final) call.</li>
+<li>\(b\) is the factor by which the problem size decreases per recursive call.</li>
+<li>\(c\) is a constant for the running time of the base case. It is not used in the theorem.</li>
+<li>\(d\) is the power of the running time of the "main part" of the algorithm. What
+is meant by this will be made clear in the examples.</li>
+</ul>
+
+<p>
+Once we have these values defined, the master theorem is simply that the running
+time of the algorithm is:
+</p>
+
+<p>
+\[
+T(n) \leq \begin{cases}
+    O(n^d \log n),      & \text{if } a = b^d \newline
+    O(n^d),             & \text{if } a < b^d \newline
+    O(n^{\log_b(a)}),   & \text{if } a > b^d
+\end{cases}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-examples" class="outline-2">
+<h2 id="examples">Examples</h2>
+<div class="outline-text-2" id="text-examples">
+</div>
+
+<div id="outline-container-binary-search" class="outline-3">
+<h3 id="binary-search">Binary Search</h3>
+<div class="outline-text-3" id="text-binary-search">
+<p>
+The Binary Search algorithm is supplied a sorted array of length \(n\),
+compares the middle element to the one it is searching for, then based
+off those makes a recursive call on either the left or right half of the
+array, until the element it is searching for is found, or the size of
+the array is one and the element is not present.
+</p>
+
+<p>
+The below pseudocode is not complete, however it should provide an idea
+of how Binary Search works, if you are not already familiar with it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">BinarySearch</span>(<span style="font-weight: bold;">int</span> array[N] A, <span style="font-weight: bold;">int</span> target):
+    <span style="font-weight: bold;">if</span> array[N/2] == target:
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">True</span>
+    left = left half of A
+    right = right half of A
+    <span style="font-weight: bold;">if</span> array[N/2] &gt; target:
+        <span style="font-weight: bold;">return</span> BinarySearch(left, target)
+    <span style="font-weight: bold;">if</span> array[N/2] &lt; target:
+        <span style="font-weight: bold;">return</span> BinarySearch(right, target)
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>We see that <code>BinarySearch</code> only calls itself once - there are two
+possible places, however in one call, only one of them can be called:
+this means \(a = 1\).</li>
+<li>As recursive calls only look at one half of the given array, we see
+that \(b = 2\).</li>
+<li>The work done by the algorithm <i>not</i> recursively is just a comparison,
+which runs in constant time, so \(d = 0\).</li>
+</ul>
+
+<p>
+\(b^d = 1 = a\), so we refer to the first case, and find that the
+running time of binary search is \(O(\log n)\), which matches what we
+already know about Binary Search.
+</p>
+</div>
+</div>
+
+<div id="outline-container-merge-sort" class="outline-3">
+<h3 id="merge-sort">Merge Sort</h3>
+<div class="outline-text-3" id="text-merge-sort">
+<p>
+The Merge Sort algorithm is supplied an unsorted array of length \(n\),
+then recursively sorts sub-arrays, then merges them into larger arrays.
+If you haven't encountered this algorithm before, this concept may take
+a little while to get your head around: below is some pseudocode that
+may help.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">MergeSort</span>(<span style="font-weight: bold;">int</span> array[N] A):
+    <span style="font-weight: bold;">if</span> N == 1:
+        <span style="font-weight: bold;">return</span> A
+    sorted_left = MergeSort(left half of A)
+    sorted_right = MergeSort(right half of A)
+    <span style="font-weight: bold; font-style: italic;">i</span>, <span style="font-weight: bold; font-style: italic;">j</span> = 0
+    sorted_array = []
+    <span style="font-weight: bold;">while</span> <span style="font-weight: bold; text-decoration: underline;">True</span>:
+        <span style="font-weight: bold;">if</span> i == <span style="font-weight: bold;">len</span>(sorted_left):
+            sorted_array.append(rest of sorted_right)
+            <span style="font-weight: bold;">break</span>
+        <span style="font-weight: bold;">if</span> j == <span style="font-weight: bold;">len</span>(sorted_right):
+            sorted_array.append(rest of sorted_left)
+            <span style="font-weight: bold;">break</span>
+        <span style="font-weight: bold;">if</span> sorted_left[i] &lt; sorted_right[j]:
+            sorted_array.append(sorted_left[i])
+            i++
+        <span style="font-weight: bold;">if</span> sorted_right[j] &lt; sorted_left[i]:
+            sorted_array.append(sorted_right[j])
+            j++
+    <span style="font-weight: bold;">return</span> sorted_array
+</pre>
+</div>
+
+<p>
+The part that is done recursively, is obtaining the sorted left and
+right halves. What the algorithm does not do recursively however is
+merge the two halves to make one larger sorted array.
+</p>
+
+<ul class="org-ul">
+<li>Recursively, we make 2 calls, for the sorted left and right halves, so
+\(a = 2\).</li>
+<li>Each recursive call receives a problem of half the size, so \(b = 2\).</li>
+<li>The running time of the merge at the end of the call is \(O(n)\), so
+\(d = 1\).</li>
+</ul>
+
+<p>
+\(b^d = 2 = a\), so we use the first case again: the running time of
+Merge Sort is \(O(n \log n)\), which matches what we should know.
+</p>
+
+<p>
+Quick Sort is a slightly interesting case as its worst case scenario is
+actually \(O(n^2)\) (think about going through it on a sorted array).
+However, assuming an optimal quicksort - meaning it always takes the
+median element - you should now be able to prove that it has
+\(O(n \log n)\) performance.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-informal-proof" class="outline-2">
+<h2 id="informal-proof">Informal Proof</h2>
+<div class="outline-text-2" id="text-informal-proof">
+<p>
+I call this a "proof", because really we only want to build some
+intuition about the working of the master theorem rather than to build a
+formal proof.
+</p>
+
+<p>
+There are 3 cases to consider, which we will try to cover one-by-one:
+</p>
+<ul class="org-ul">
+<li>The case where all the nodes have equal work to do.</li>
+<li>The case where child nodes have less work to do.</li>
+<li>The case where child nodes have more work to do.</li>
+</ul>
+
+<p>
+When all the nodes have equal work to do, we mean that the amount of
+work is the same at every recursion level. The amount of work per level
+is \(n^d\) and there are \(\log n\) levels, so we can intuitively say
+that in this case there is a total of \(O(n^d \log n)\) work being done.
+</p>
+
+<p>
+When the child nodes have less work to do, we can expect that most of
+the work is being done at the top of the recursion tree. This means that
+the most significant amount of work is that which is done at the root,
+not recursively: this means an \(O(n^d)\) complexity.
+</p>
+
+<p>
+Conversely, when the child nodes have more work to do, we can expect
+that most of the work is being pushed onto the leaf nodes. However, at
+the leaf nodes, we are at the base case, so the complexity for each
+individual one is in constant time: this means the overall complexity is
+just the number of leaves: \(O(\text{no. leaves})\). So what's the
+equation for the number of leaves? The equation for the number of leaves
+is the number of sub-calls per sub-call (i.e. the rate of proliferation)
+to the power of the number of levels: \(a^{\log_b(n)}\). As seen below,
+this is the same as \(n^{\log_b(a)}\).
+</p>
+
+<p>
+Using the \(\log(x^w) = w \log x\) rule of logarithms:
+</p>
+
+<p>
+\[
+\log_b(n)\log_b(a) = \log_b(a)\log_b(n)
+\]
+</p>
+
+<p>
+\[
+\log_b(a^{\log_b(n)}) = \log_b(n^{\log_b(a)})
+\]
+</p>
+
+<p>
+\[
+a^{\log_b(n)} = n^{\log_b(a)}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-formal-proof" class="outline-2">
+<h2 id="formal-proof">Formal Proof</h2>
+<div class="outline-text-2" id="text-formal-proof">
+<p>
+Consider this in the form of a recursion tree, the below one should make
+this easier. Here specifically we have the case of \(a=2\).
+</p>
+
+
+<div id="orgd17c337" class="figure">
+<p><img src="../images/recursion_tree.png" alt="recursion_tree.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>recursion tree where a=2</p>
+</div>
+
+<p>
+There are \(log_b n + 1\) levels in the tree, and where \(j\) is the level the
+tree is on, each subproblem is of the size \(\frac{n}{b^j}\); furthermore, it
+will take at most \(c\left(\frac{n}{b^j}\right)^d\) work to solve. There are
+\(a^j\) subproblems on each level, so on each level there is a total of \(a^j
+\cdot c \cdot \left(\frac{n}{b^j}\right)^d = cn^d\left(\frac{a}{b^d}\right)^j\)
+work being done on each level.
+</p>
+
+<p>
+This means that the total amount of work being done is
+</p>
+
+<p>
+\[
+cn^d \sum^{\log_b n}_{j=0} \left(\frac{a}{b^d}\right)^j
+\]
+</p>
+
+<p>
+So now there are 3 cases to consider:
+</p>
+<ul class="org-ul">
+<li>The case where \(a = b^d\)</li>
+<li>The case where \(a < b^d\)</li>
+<li>The case where \(a > b^d\)</li>
+</ul>
+
+<p>
+When \(a = b^d\), we know that \(\frac{a}{b^d} = 1\), so the amount of work
+being done is:
+\[
+cn^d \sum^{\log_b n}_{j=0} 1 = cn^d \log_b n \in O(n^d \log n)
+\]
+</p>
+
+<p>
+When \(a < b^d\), we know that \(0 < \frac{a}{b^d} < 1\), so we know that the
+sum converges to a constant.
+</p>
+
+<p>
+\[
+\sum^{\log_b n}_{j=0} \left(\frac{a}{b^d}\right)^j \leq \sum^{\infty}_{j=0} \left(\frac{a}{b^d}\right)^j = \frac{1}{1 - \frac{a}{b^d}}
+\]
+</p>
+
+<p>
+So the sum for the total work being done is less than or equal to some constant
+(as \(a, b, d\) are all constants).
+</p>
+
+<p>
+It follows that in the case \(a < b^d\):
+</p>
+
+<p>
+\[
+cn^d \sum^{\log_b n}_{j=0} \left(\frac{a}{b^d}\right)^j = cn^d k \in O(n^d)
+\]
+</p>
+
+<p>
+Where \(k\) is a constant \(\leq \frac{1}{1 - \frac{a}{b^d}}\).
+</p>
+
+<p>
+The final case to prove is the case where \(a > b^d\):
+</p>
+
+<p>
+\[
+\sum^{\log_b n}_{j=0} \left(\frac{a}{b^d}\right)^j = \frac{1 - \left(\frac{a}{b^d}\right)^{\log_b n + 1}}{1 - \frac{a}{b^d}}
+\]
+</p>
+
+<p>
+\(a, b, d\) are constants, so we find this is in
+\(O\left(\left(\frac{a}{b^d}\right)^{\log_b n}\right)\).
+</p>
+
+<p>
+We have already established that \(a^{\log_b n} = n^{\log_b a}\). We can use the
+same method to show that \(b^{d\log_b n} = n^{d\log_b b} = n^d\).
+</p>
+
+<p>
+This means that our total work done in this case is
+</p>
+
+<p>
+\[
+cn^d \sum^{\log_b n}_{j=0} \left(\frac{a}{b^d}\right)^j \in O\left(n^d \cdot \frac{n^{\log_b a}}{n^d}\right) = O(n^{\log_b a})
+\]
+</p>
+
+<p>
+So we have now proven all three cases of the master theorem.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+Unless otherwise noted, the content of this site is licensed under
+                                         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+</div>
+</body>
+</html>
