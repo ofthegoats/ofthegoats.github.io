@@ -39,7 +39,7 @@
    ENTRY is a file name. STYLE is the style of the sitemap.
    PROJECT is the current project."
   (cond ((not (directory-name-p entry))
-	       (format "** [[file:%s][%s]] posted %s"
+	       (format "[[file:%s][%s]] posted %s"
 		             entry
 		             (org-publish-find-title entry project)
                  (car (org-publish-find-property entry :date project))))

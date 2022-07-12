@@ -4,38 +4,20 @@
   --mono-font:  "JetbrainsMono Nerd Font", "JetbrainsMono", "Fira Code", "Ubuntu Mono" ,Consolas, Menlo, Monaco, "Andale Mono", monospace;
   --sans-font: var(--mono-font);
 
-  /* Default (light) theme */
-  /* TODO gruvbox */
-  --bg: #fff;
-  --accent-bg: #f5f7ff;
-  --text: #212121;
-  --text-light: #585858;
-  --border: #d8dae1;
-  --accent: #0d47a1;
-  --code: #d81b60;
-  --preformatted: #444;
-  --marked: #ffdd33;
-  --disabled: #efefef;
-}
-
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --bg: #1d2021;
-    --accent-bg: #282828;
-    --text: #ebdbb2;
-    --text-light: #ebdbb2;
-    --border: #32302f;
-    --accent: #d79921;
-    --code: #b16286;
-    --preformatted: #d5c4a1;
-    --disabled: #a89984;
-  }
+  color-scheme: dark;
+  --bg: #1d2021;
+  --accent-bg: #282828;
+  --text: #ebdbb2;
+  --text-light: #ebdbb2;
+  --border: #32302f;
+  --accent: #d79921;
+  --code: #b16286;
+  --preformatted: #d5c4a1;
+  --disabled: #a89984;
   /* Add a bit of transparency so light media isn't so glaring in dark mode */
   img,
   video {
-    opacity: 0.8;
+      opacity: 0.8;
   }
 }
 
@@ -596,4 +578,9 @@ label {
 
 ul.sitemap {
     list-style: none;
+}
+
+ul.sitemap li::before {
+    content: "** ";
+    margin-left: -3ch;
 }
