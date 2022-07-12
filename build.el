@@ -39,10 +39,10 @@
    ENTRY is a file name. STYLE is the style of the sitemap.
    PROJECT is the current project."
   (cond ((not (directory-name-p entry))
-	       (format "** [[file:%s][%s]] (posted/edited %s)"
+	       (format "** [[file:%s][%s]] posted %s"
 		             entry
 		             (org-publish-find-title entry project)
-                 (format-time-string "%d.%m.%y" (org-publish-find-date entry project))))
+                 (car (org-publish-find-property entry :date project))))
 	      ((eq style 'tree)
 	       ;; Return only last subdir.
 	       (file-name-nondirectory (directory-file-name entry)))
