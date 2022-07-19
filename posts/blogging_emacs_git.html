@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blogging with Emacs and git</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<a class="alignleft" href="/">/home/otg</a>
+                                        <a class="alignright" href="/about.html">[about]</a>
+                                        <a class="alignright" href="/rss.xml">[rss]</a>
+</div>
+<div id="content" class="content">
+<h1 class="title">Blogging with Emacs and git</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9508761">Blogging with Emacs</a></li>
+<li><a href="#orgd057f9d">Deploying with Git</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9508761" class="outline-2">
+<h2 id="org9508761">Blogging with Emacs</h2>
+<div class="outline-text-2" id="text-org9508761">
+<p>
+In Emacs, you can write your blog in org-mode, then export to HTML
+with a script which uses <code>ox-publish</code>. This should be built into Emacs
+and you can include it in your script with a <code>require</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">ox-publish</span>) 
+</pre>
+</div>
+
+
+<p>
+You will need to set up the variable <code>org-publish-project-alist</code>,
+which contains a list of lists (list of projects) like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="font-weight: bold;">setq</span> org-publish-project-alist
+      (list
+       (list <span style="font-style: italic;">"site"</span>
+             <span style="font-weight: bold;">:recursive</span> t
+             <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"./content"</span>
+             <span style="font-weight: bold;">:publishing-directory</span>)))
+</pre>
+</div>
+
+<p>
+The above is a very rudimentary example, and will likely not include
+all the features you want in your blog. Other options you may be
+interested in include generating a sitemap which you can use as an
+index. There are other options you may want to turn off. You can make
+as many projects in here as you like: I have a separate project for my
+posts, about, static files and RSS feed.
+</p>
+
+<p>
+If you don't like the default CSS you can include a stylesheet in the
+head of the exported HTML. Investigate the variables <code>org-html-head</code>
+and <code>org-html-head-include-default-style</code>. Other variables which may
+interest you are <code>org-html-preamble-format</code> and
+<code>org-html-postamble-format</code>. These variables should all be documented
+inside Emacs and can be accessed with <code>C-h v</code>, but make sure you have
+required ox-publish so that you can find them.
+</p>
+
+<p>
+With your projects set up you want to build your site, which you can
+do with just
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(org-publish-all t)
+</pre>
+</div>
+
+<p>
+Then you can call the script with <code>emacs -Q --script foo.el</code>, where
+<code>foo</code> is your build script.
+</p>
+
+<p>
+You can see <a href="https://github.com/ofthegoats/ofthegoats.github.io/blob/master/build.el">my build script</a> if it helps. <a href="https://writepermission.com/org-blogging-rss-feed.html">This blog post</a> was also very
+useful for me to set up an RSS feed and better understand the
+publishing system.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd057f9d" class="outline-2">
+<h2 id="orgd057f9d">Deploying with Git</h2>
+<div class="outline-text-2" id="text-orgd057f9d">
+<p>
+This site is (at the time of writing) hosted with <a href="https://pages.github.com/">Github Pages</a>, so it
+is convenient for me to store my org content in the same repository as
+the HTML output. Unfortunately, at the time of writing I cannot simply
+specify that I would like the root of the site to be a particular
+folder on the master branch.
+</p>
+
+<p>
+I <i>can</i> however specify which branch to use, so I have a <code>gh-pages</code>
+branch which is a copy of the <code>public</code> directory on the master branch.
+</p>
+
+<p>
+We can use git subtrees to manage this, as I believe this is much
+simpler than using submodules. From the root of your blog, i.e. above
+the <code>public</code> directory, you can use
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ git subtree split --prefix public --branch gh-pages
+</pre>
+</div>
+
+<p>
+to create a new branch called <code>gh-pages</code>. If you need to delete that
+branch you can use <code>git branch -D gh-pages</code>. When pushing changes to
+github, make sure to push your new branch to <code>origin/gh-pages</code> or
+whatever your equivalent may be. Also make sure to tell github to use
+that branch as the root for your site.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+Unless otherwise noted, the content of this site is licensed under
+                                         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+</div>
+</body>
+</html>
