@@ -1,0 +1,79 @@
+#+title: Blogging with Emacs and git
+#+date: 2022-07-19 
+
+* Blogging with Emacs
+
+In Emacs, you can write your blog in org-mode, then export to HTML
+with a script which uses ~ox-publish~. This should be built into Emacs
+and you can include it in your script with a ~require~
+
+#+begin_src elisp
+ (require 'ox-publish) 
+#+end_src
+
+
+You will need to set up the variable ~org-publish-project-alist~,
+which contains a list of lists (list of projects) like so:
+
+#+begin_src elisp :exports code
+  (setq org-publish-project-alist
+	(list
+	 (list "site"
+	       :recursive t
+	       :base-directory "./content"
+	       :publishing-directory)))
+#+end_src
+
+The above is a very rudimentary example, and will likely not include
+all the features you want in your blog. Other options you may be
+interested in include generating a sitemap which you can use as an
+index. There are other options you may want to turn off. You can make
+as many projects in here as you like: I have a separate project for my
+posts, about, static files and RSS feed.
+
+If you don't like the default CSS you can include a stylesheet in the
+head of the exported HTML. Investigate the variables ~org-html-head~
+and ~org-html-head-include-default-style~. Other variables which may
+interest you are ~org-html-preamble-format~ and
+~org-html-postamble-format~. These variables should all be documented
+inside Emacs and can be accessed with ~C-h v~, but make sure you have
+required ox-publish so that you can find them.
+
+With your projects set up you want to build your site, which you can
+do with just
+
+#+begin_src elisp
+  (org-publish-all t)
+#+end_src
+
+Then you can call the script with ~emacs -Q --script foo.el~, where
+~foo~ is your build script.
+
+You can see [[https://github.com/ofthegoats/ofthegoats.github.io/blob/master/build.el][my build script]] if it helps. [[https://writepermission.com/org-blogging-rss-feed.html][This blog post]] was also very
+useful for me to set up an RSS feed and better understand the
+publishing system.
+
+* Deploying with Git
+
+This site is (at the time of writing) hosted with [[https://pages.github.com/][Github Pages]], so it
+is convenient for me to store my org content in the same repository as
+the HTML output. Unfortunately, at the time of writing I cannot simply
+specify that I would like the root of the site to be a particular
+folder on the master branch.
+
+I /can/ however specify which branch to use, so I have a ~gh-pages~
+branch which is a copy of the ~public~ directory on the master branch.
+
+We can use git subtrees to manage this, as I believe this is much
+simpler than using submodules. From the root of your blog, i.e. above
+the ~public~ directory, you can use
+
+#+begin_src bash
+$ git subtree split --prefix public --branch gh-pages
+#+end_src
+
+to create a new branch called ~gh-pages~. If you need to delete that
+branch you can use ~git branch -D gh-pages~. When pushing changes to
+github, make sure to push your new branch to ~origin/gh-pages~ or
+whatever your equivalent may be. Also make sure to tell github to use
+that branch as the root for your site.

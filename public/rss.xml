@@ -14,8 +14,8 @@
   <link></link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Tue, 12 Jul 2022 14:52:57 +0100</pubDate>
-  <lastBuildDate>Tue, 12 Jul 2022 14:52:57 +0100</lastBuildDate>
+  <pubDate>Tue, 19 Jul 2022 11:58:23 +0100</pubDate>
+  <lastBuildDate>Tue, 19 Jul 2022 11:58:23 +0100</lastBuildDate>
   <generator>Emacs 28.1 Org-mode 9.5.2</generator>
   <webMaster>goats@godel (nil)</webMaster>
   <image>
@@ -25,6 +25,7 @@
   </image>
 
   <ul class="org-ul">
+    <li><a href="posts/blogging_emacs_git.html">Blogging with Emacs and git</a></li>
     <li><a href="posts/asking_smart_questions.html">Asking Smart Questions</a></li>
     <li><a href="posts/master_theorem.html">The Master Theorem</a></li>
   </ul>

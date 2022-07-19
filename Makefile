@@ -17,7 +17,11 @@ serve:
 	python3 -m http.server -d $(pubdir)
 
 publish:
-	@echo "* TODO publish"
+	git add public
+	git status
+	git commit
+	git subtree split --prefix public --branch gh-pages
+	git push origin/gh-pages gh-pages
 
 $(html): $(org)
 	emacs -Q --script ./build.el
