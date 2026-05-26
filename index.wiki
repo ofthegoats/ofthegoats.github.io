@@ -1,0 +1,28 @@
+%title Piotr Kozicki
+= Piotr Kozicki =
+[[https://github.com/ofthegoats|GitHub]];
+[[https://orcid.org/0009-0003-5730-6895|ORCID]];
+[[https://www.linkedin.com/in/piotrkozicki|LinkedIn]]
+----
+  
+{{file:images/resize_mugshot.jpeg|mugshot|style="width=10px"}}
+
+M.Sc.R student at the University of Bristol in the
+[[https://plrg-bristol.github.io/|Programming Languages Research Group]]
+supervised by [[https://seis.bristol.ac.uk/~tz20861/|Dr. Alex Kavvos]].
+
+My research interests are scattered around:
+- (modal) logic and semantics
+- (homotopy) type theory
+- category theory and duality
+
+== Publications ==
+
+- [[https://arxiv.org/abs/2605.06533|Relational Dualities and Bisimulation]] -
+  Accepted for publication at FSCD'26
+
+== Contact ==
+
+`piotr dot kozicki at bristol dot ac dot uk`
+
+81 Woodland Road, Bristol, BS8 1US, United Kingdom
