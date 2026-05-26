@@ -4,8 +4,7 @@
 [[https://orcid.org/0009-0003-5730-6895|ORCID]];
 [[https://www.linkedin.com/in/piotrkozicki|LinkedIn]]
 ----
-  
-{{file:images/resize_mugshot.jpeg|mugshot|style="width=10px"}}
+{{https://raw.githubusercontent.com/ofthegoats/ofthegoats.github.io/refs/heads/master/images/resize_mugshot.jpeg|mugshot|}}
 
 M.Sc.R student at the University of Bristol in the
 [[https://plrg-bristol.github.io/|Programming Languages Research Group]]
