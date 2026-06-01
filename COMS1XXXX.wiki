@@ -1,0 +1,13 @@
+= COMS1XXXX =
+
+1st year undergraduate seminars for Computer Science.
+
+[[https://ratherforky.gitlab.io/yr1-CS-programme-content/|Old worksheets by Jess Foster]]. Many are re-used in TB2.
+
+== TB1 ==
+
+I re-designed all of these. Will publish them later.
+
+== TB2 ==
+
+I re-designed only some of these. [[https://ratherforky.gitlab.io/yr1-CS-programme-content/|The majority are Jess']].
