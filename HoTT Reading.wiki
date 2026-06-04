@@ -1,0 +1,13 @@
+= Homotopy Type Theory =
+
+Our main text is Egbert Rijke's "Introduction to Homotopy Type Theory", a
+digital copy of which is available through the UoB Library. Other supplementary
+sources include:
+- The HoTT book
+- Robert Harper's lectures
+
+Once I have organised my new website and resources, I might also publish some
+notes on the topic.
+
+If you are interested in joining this reading group, please send me an email.
+We have a Teams group to which I will add you.

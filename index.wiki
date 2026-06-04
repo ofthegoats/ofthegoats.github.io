@@ -2,9 +2,10 @@
 = Piotr Kozicki =
 [[https://github.com/ofthegoats|GitHub]];
 [[https://orcid.org/0009-0003-5730-6895|ORCID]];
-[[https://www.linkedin.com/in/piotrkozicki|LinkedIn]]
+[[https://www.linkedin.com/in/piotrkozicki|LinkedIn]];
+[[https://mathstodon.xyz/@ofthegoats|Fediverse]]
 ----
-{{https://raw.githubusercontent.com/ofthegoats/ofthegoats.github.io/refs/heads/master/images/resize_mugshot.jpeg|mugshot|}}
+{{local:./docs/static/images/resize_mugshot.jpeg|mugshot|}}
 
 M.Sc.R. student at the University of Bristol in the
 [[https://plrg-bristol.github.io/|Programming Languages Research Group]]
@@ -34,7 +35,18 @@ some teaching responsibilities.
 
 - [[COMS1XXXX]] - unit lead
 
+== Reading Groups ==
+
+I participate in and run a few reading groups at the university.
+
+- [[HoTT Reading|HoTT]] - Homotopy Type Theory reading group
+- [[CSoLL Reading|CSoLL]] - Categorical Semantics of Linear Logic reading group
+
+
 == Contact ==
+
+Please use my email or message me on Zulip, which I check far more often than
+Teams.
 
 `piotr dot kozicki at bristol dot ac dot uk`
 
