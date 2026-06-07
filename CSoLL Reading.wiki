@@ -1,3 +1,6 @@
 = Categorical Semantics of Linear Logic =
 
-foo
+We are reading Paul-André Melliès' [[https://www.irif.fr/~mellies/mpri/mpri-ens/biblio/categorical-semantics-of-linear-logic.pdf|Categorical Semantics of Linear Logic]].
+
+When they are a little more complete, I might share my own notes on the
+subject.

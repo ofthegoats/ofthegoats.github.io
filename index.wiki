@@ -11,7 +11,11 @@ M.Sc.R. student at the University of Bristol in the
 [[https://plrg-bristol.github.io/|Programming Languages Research Group]]
 supervised by [[https://seis.bristol.ac.uk/~tz20861/|Dr. Alex Kavvos]].
 
-My research interests are scattered around:
+My research is primarily in understanding the nature of computation, types and
+verification mathematically, especially through the lenses of category theory
+and logic.
+
+In particular, I am currently studying
 - (modal) logic and semantics
 - (homotopy) type theory
 - category theory and duality
@@ -23,7 +27,7 @@ My research interests are scattered around:
 
 == Talks ==
 
-- Upcoming: Relational Dualities and Bisimulation at Bristol PLRG
+- [[local:./docs/static/slides/relational-dualities-bristol.pdf|Relational Dualities and Bisimulation]] - Bristol PLRG Seminar, 4 June
 
 == Teaching ==
 
@@ -45,9 +49,10 @@ I participate in and run a few reading groups at the university.
 
 == Contact ==
 
-Please use my email or message me on Zulip, which I check far more often than
-Teams.
+Please use my email or message me on the PLRG Zulip, which I check far more
+often than Teams.
 
-`piotr dot kozicki at bristol dot ac dot uk`
-
-81 Woodland Road, Bristol, BS8 1US, United Kingdom
+*Email*::
+:: piotr dot kozicki at bristol dot ac dot uk
+*Address*::
+:: 81 Woodland Road, Bristol, BS8 1US, United Kingdom
