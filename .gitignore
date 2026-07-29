@@ -1,0 +1,2 @@
+# only one copy of static files in output directory
+static/
