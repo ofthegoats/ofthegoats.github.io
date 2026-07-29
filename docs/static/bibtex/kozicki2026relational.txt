@@ -1,0 +1,18 @@
+@InProceedings{kozicki2026relational,
+  author =	{Kozicki, Piotr and Kavvos, G. A.},
+  title =	{{Relational Dualities and Bisimulation}},
+  booktitle =	{11th International Conference on Formal Structures for Computation and Deduction (FSCD 2026)},
+  pages =	{20:1--20:18},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-433-8},
+  ISSN =	{1868-8969},
+  year =	{2026},
+  volume =	{378},
+  editor =	{Pfenning, Frank},
+  publisher =	{Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FSCD.2026.20},
+  URN =		{urn:nbn:de:0030-drops-263703},
+  doi =		{10.4230/LIPIcs.FSCD.2026.20},
+  annote =	{Keywords: bisimulation, modal logic, duality, categorical semantics}
+}

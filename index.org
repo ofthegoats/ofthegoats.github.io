@@ -1,0 +1,73 @@
+#+title: Piotr Kozicki
+#+options: toc:nil num:0
+
+#+attr_html: :align right
+[[https://github.com/ofthegoats/][GitHub]]; [[https://orcid.org/0009-0003-5730-6895][ORCID]]; [[https://www.linkedin.com/in/piotrkozicki/][LinkedIn]]; [[https://mathstodon.xyz/@ofthegoats][Fediverse]]; CV
+
+-----
+
+#+attr_html: :alt mugshot :align right
+[[file:static/mugshot-resized.jpeg]]
+
+M.Sc.R. student at the University of Bristol [[https://plrg-bristol.github.io/][Programming Languages
+Research Group]], supervised by [[https://seis.bristol.ac.uk/~tz20861/][Dr. Alex Kavvos]].
+
+My research interests revolve primarily around:
+- programming languages
+- (categorical, modal, program) logic and semantics
+- category theory and duality
+- linear logic and concurrency
+
+More generally, I am interested in the mathematical foundations of
+computation and verification, especially through the lens of category
+theory and logic.
+
+- Email :: piotr dot kozicki at bristol dot ac dot uk
+- Address :: 81 Woodland Road, Bristol BS8 1US, United Kingdom
+
+My name is Polish and its IPA pronounciation is //pjɔtr/ /kɔˈʑit͡ski//.
+
+* Research
+** Publications
+
+- Piotr Kozicki, G. A. Kavvos. *Relational Dualities and
+  Bisimulation.* In the Proceedings of the 11th International
+  Conference on Formal Structures for Computation and Deduction
+  *(FSCD'26)*. [[https://doi.org/10.4230/LIPIcs.FSCD.2026.20][10.4230/LIPIcs.FSCD.2026.20]].
+
+  [[https://arxiv.org/abs/2605.06533][(arXiv version)]] [[file:static/slides/fscd-relbisim.pdf][(slides)]] [[file:static/bibtex/kozicki2026relational.txt][(bibtex)]]
+
+** Talks
+
+These are in addition to the presentations I have given at conferences.
+
++ *Relational Dualities and Bisimulation.* Bristol PLRG Seminar,
+  Bristol, 4th June 2026. [[file:static/slides/plrg-relbisim.pdf][(slides)]].
+
+* Teaching
+
+I have been allowed to take on some teaching as a PGR. Some resources
+and the like are linked below.
+
+- [[file:COMS1XXXX.org][COMS1XXXX --- First Year Programme Tutorials]]
+- COMS30040 --- Types and Lambda Calculus
+
+* COMMENT Blog Posts
+
+- Asking smart questions
+- The master theorem
+
+* Miscellanea
+
+ #+begin_quote
+Я сказал себе: «Ну вот, сяду за стол и первую мысль сочиню за этим
+столом особенно умную». Но особенно умной мысли я сочинить не мог.
+Тогда я сказал себе «Хорошо. Не удалось сочинить особенно умную мысль,
+тогда сочиню особенно глупую». Но и особенно глупую мысль сочинить
+тоже не мог.
+
+---Д. Хармс, Голубая Тетрадь
+ #+end_quote
+
+- I really enjoy this daily puzzle [[https://www.andrewt.net/puzzles/cell-tower/][(Cell Tower)]].
+- This webpage is written using [[https://orgmode.org/][Emacs Org Mode]].
