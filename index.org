@@ -49,8 +49,9 @@ These are in addition to the presentations I have given at conferences.
 I have been allowed to take on some teaching as a PGR. Some resources
 and the like are linked below.
 
-- [[file:COMS1XXXX.org][COMS1XXXX --- First Year Programme Tutorials]]
 - COMS30040 --- Types and Lambda Calculus
+- [[file:COMS1XXXX.org][COMS1XXXX --- First Year Programme Tutorials]]
+- COMS10018 --- Algorithms I
 
 * COMMENT Blog Posts
 
