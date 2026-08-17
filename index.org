@@ -19,13 +19,18 @@ My research interests revolve primarily around:
 - linear logic and concurrency
 
 More generally, I am interested in the mathematical foundations of
-computation and verification, especially through the lens of category
+computation and verification, especially using the lens of category
 theory and logic.
 
 - Email :: piotr dot kozicki at bristol dot ac dot uk
 - Address :: 81 Woodland Road, Bristol BS8 1US, United Kingdom
 
 My name is Polish and its IPA pronounciation is //pjɔtr/ /kɔˈʑit͡ski//.
+
+This website is slowly being redesigned. Some things which should be
+links in the near future -- aren't. If there is something specific you
+want but isn't on the page, just send me an email: I usually monitor
+and respond to these.
 
 * Research
 ** Publications
@@ -50,7 +55,7 @@ I have been allowed to take on some teaching as a PGR. Some resources
 and the like are linked below.
 
 - COMS30040 --- Types and Lambda Calculus
-- [[file:COMS1XXXX.org][COMS1XXXX --- First Year Programme Tutorials]]
+- COMS1XXXX --- First Year Programme Tutorials
 - COMS10018 --- Algorithms I
 
 * COMMENT Blog Posts
