@@ -9,7 +9,7 @@
 #+attr_html: :alt mugshot :align right
 [[file:static/mugshot-resized.jpeg]]
 
-M.Sc.R. student at the University of Bristol [[https://plrg-bristol.github.io/][Programming Languages
+Ph.D. student at the University of Bristol [[https://plrg-bristol.github.io/][Programming Languages
 Research Group]], supervised by [[https://seis.bristol.ac.uk/~tz20861/][Dr. Alex Kavvos]].
 
 My research interests revolve primarily around:
@@ -42,11 +42,22 @@ and respond to these.
 
   [[https://arxiv.org/abs/2605.06533][(arXiv version)]] [[file:static/slides/fscd-relbisim.pdf][(slides)]] [[file:static/bibtex/kozicki2026relational.txt][(bibtex)]]
 
+** MScR Thesis
+
+I will publish the abstract and link the document once I have finished
+my examination.
+
+- Piotr Kozicki. *Relational Stone-type Dualities for Logic*. NB
+  Awaiting examination in October. Master's thesis. University of
+  Bristol, Sept. 2026.
+
+  [[file:static/bibtex/kozicki2026thesis.txt][(bibtex)]]
+
 ** Talks
 
 These are in addition to the presentations I have given at conferences.
 
-+ *Relational Dualities and Bisimulation.* Bristol PLRG Seminar,
+- *Relational Dualities and Bisimulation.* Bristol PLRG Seminar,
   Bristol, 4th June 2026. [[file:static/slides/plrg-relbisim.pdf][(slides)]].
 
 * Teaching
@@ -54,9 +65,9 @@ These are in addition to the presentations I have given at conferences.
 I have been allowed to take on some teaching as a PGR. Some resources
 and the like are linked below.
 
-- COMS30040 --- Types and Lambda Calculus
-- COMS1XXXX --- First Year Programme Tutorials
-- COMS10018 --- Algorithms I
+- [[https://cs-uob.github.io/COMS30040/][COMS30040 --- Types and Lambda Calculus]]
+- First Year General CS Support
+- [[https://bristolalgo.github.io/courses/2025_2026_COMS10018/coms10018.html][COMS10018 --- Algorithms I]]
 
 * COMMENT Blog Posts
 
