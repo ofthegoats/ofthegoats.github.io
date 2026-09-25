@@ -27,25 +27,20 @@ theory and logic.
 
 My name is Polish and its IPA pronounciation is //pjɔtr/ /kɔˈʑit͡ski//.
 
-This website is slowly being redesigned. Some things which should be
-links in the near future -- aren't. If there is something specific you
-want but isn't on the page, just send me an email: I usually monitor
-and respond to these.
-
 * Research
 ** Publications
 
-- Piotr Kozicki, G. A. Kavvos. *Relational Dualities and
+- _Piotr Kozicki_, G. A. Kavvos. *Relational Dualities and
   Bisimulation.* In the Proceedings of the 11th International
   Conference on Formal Structures for Computation and Deduction
   *(FSCD'26)*. [[https://doi.org/10.4230/LIPIcs.FSCD.2026.20][10.4230/LIPIcs.FSCD.2026.20]].
 
-  [[https://arxiv.org/abs/2605.06533][(arXiv version)]] [[file:static/slides/fscd-relbisim.pdf][(slides)]] [[file:static/bibtex/kozicki2026relational.txt][(bibtex)]]
+  [[https://arxiv.org/abs/2605.06533][(arXiv version)]] [[file:static/slides/fscd-relbisim.pdf][(conference slides)]] [[file:static/bibtex/kozicki2026relational.txt][(bibtex)]]
 
 ** MScR Thesis
 
-I will publish the abstract and link the document once I have finished
-my examination.
+I will put here the abstract and a link to the official document once
+my examination is finished.
 
 - Piotr Kozicki. *Relational Stone-type Dualities for Logic*. NB
   Awaiting examination in October. Master's thesis. University of
