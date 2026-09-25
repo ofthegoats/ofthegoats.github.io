@@ -2,7 +2,7 @@
 #+options: toc:nil num:0
 
 #+attr_html: :align right
-[[https://github.com/ofthegoats/][GitHub]]; [[https://orcid.org/0009-0003-5730-6895][ORCID]]; [[https://www.linkedin.com/in/piotrkozicki/][LinkedIn]]; [[https://mathstodon.xyz/@ofthegoats][Fediverse]]; CV
+[[https://github.com/ofthegoats/][GitHub]]; [[https://orcid.org/0009-0003-5730-6895][ORCID]]; [[https://www.linkedin.com/in/piotrkozicki/][LinkedIn]]; [[https://mathstodon.xyz/@ofthegoats][Fediverse]]; [[file:static/cv.pdf][CV]]
 
 -----
 
@@ -65,8 +65,8 @@ These are in addition to the presentations I have given at conferences.
 I have been allowed to take on some teaching as a PGR. Some resources
 and the like are linked below.
 
+- First Year Computer Science Programme Tutorials
 - [[https://uob-coms30040.github.io/][COMS30040 --- Types and Lambda Calculus]]
-- First Year General CS Support
 - [[https://bristolalgo.github.io/courses/2025_2026_COMS10018/coms10018.html][COMS10018 --- Algorithms I]]
 
 * COMMENT Blog Posts
